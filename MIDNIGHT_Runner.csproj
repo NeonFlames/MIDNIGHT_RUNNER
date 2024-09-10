@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>MIDNIGHT_RUNNER</AssemblyName>
+    <Product>MIDNIGHT RUNNER</Product>
+    <Version>0.1.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <RestoreAdditionalProjectSources>
+      https://api.nuget.org/v3/index.json;
+      https://nuget.bepinex.dev/v3/index.json;
+      https://nuget.samboy.dev/v3/index.json
+    </RestoreAdditionalProjectSources>
+    <RootNamespace>MIDNIGHT_RUNNER</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.AssemblyPublicizer" Version="0.4.2" />
+    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp" Publicize="true" HintPath="$(NIGHT_RUNNERS_PROLOGUE_GAME)/BepInEx/interop/Assembly-CSharp.dll" />
+    <Reference Include="UnityEngine" Publicize="true" HintPath="$(NIGHT_RUNNERS_PROLOGUE_GAME)/BepInEx/interop/UnityEngine.dll" />
+    <Reference Include="UnityEngine.Core" HintPath="$(NIGHT_RUNNERS_PROLOGUE_GAME)/BepInEx/interop/UnityEngine.CoreModule.dll" />
+    <Reference Include="Il2Cppmscorlib" Publicize="true" HintPath="$(NIGHT_RUNNERS_PROLOGUE_GAME)/BepInEx/interop/Il2Cppmscorlib.dll" />
+    <Reference Include="Il2CppSystem" Publicize="true" HintPath="$(NIGHT_RUNNERS_PROLOGUE_GAME)/BepInEx/interop/Il2CppSystem.dll" />
+    <Reference Include="Il2CppSystem.Core" Publicize="true" HintPath="$(NIGHT_RUNNERS_PROLOGUE_GAME)/BepInEx/interop/Il2CppSystem.Core.dll" />
+    <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.*" IncludeAssets="compile" />
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+  </ItemGroup>
+</Project>
